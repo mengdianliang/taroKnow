@@ -1,5 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
+import TopicList from '../../components/topicList/topicList'
+
+import Menu from '../../components/menu/menu'
+
+
 import './index.less'
 
 class Index extends Component {
@@ -9,7 +14,7 @@ class Index extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+    // console.log(this.props, nextProps)
   }
 
   componentWillUnmount () { }
@@ -19,9 +24,11 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
+    
     return (
       <View className='index'>
-        <View><Text>Hello, World</Text></View>
+        <Menu />
+        <TopicList />
       </View>
     )
   }

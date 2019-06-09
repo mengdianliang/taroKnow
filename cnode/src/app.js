@@ -6,6 +6,7 @@ import Index from './pages/index'
 
 import configStore from './store'
 
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 import './app.less'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -20,7 +21,11 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/detail/detail',
+      'pages/login/login',
+      'pages/user/user',
+      'pages/publish/publish'
     ],
     window: {
       backgroundTextStyle: 'light',
