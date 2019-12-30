@@ -1,0 +1,24 @@
+.login-head {
+  padding: 40px;
+  .login-head-back {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .login-head-head {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-100px);
+  }
+  .login-head-name {
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 330px;
+  }
+}

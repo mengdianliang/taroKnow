@@ -1,0 +1,41 @@
+.topicinfo-replies {
+  padding-bottom: 60px;
+  .topicinfo-reply {
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 40px 0;
+    padding: 0 20px;
+    .topicinfo-reply-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .topicinfo-reply-right {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 0 40px;
+      .topicinfo-reply-right-body {
+        display: flex;
+        flex-direction: column;
+        .topicinfo-reply-right-pie {
+          margin-bottom: 10px;
+        }
+        .topicinfo-reply-right-content {
+          word-break: break-all;
+        }
+      }
+      .topicinfo-reply-right-zan {
+        display: flex;
+        flex-direction: row;
+        .topicinfo-reply-image {
+          width: 52px;
+          height: 52px;
+        }
+      }
+    }
+  }
+}

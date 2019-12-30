@@ -1,0 +1,27 @@
+.publish-topic {
+  padding: 20px;
+  .publish-topic-title,
+  .publish-topic-content {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .publish-topic-content {
+    height: 400px;
+  }
+  .publish-topic-title {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 20px;
+  }
+  .publish-topic-btn {
+    margin-top: 40px;
+    color: #ffffff;
+    background-color: #ff4081;
+  }
+  .publish-topic-cata {
+    width: 100%;
+    margin-right: 20px;
+    padding: 20px 0;
+    text-align: right;
+    border-bottom: 1px solid #cccccc;
+  }
+}

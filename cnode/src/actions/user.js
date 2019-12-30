@@ -1,35 +1,40 @@
 import Taro from '@tarojs/taro';
 import api from '../constants/api';
-import { getJSON, postJSON } from '../utils/request';  
+import { getJSON, postJSON } from '../utils/request';
 
-//验证accesstoken
+// 验证accessToken
 export function accessUserToken(params) {
-
   return async dispatch => {
-     let result = await postJSON(api.checkUserToken, params);
-     if(result && result.data && result.data.success) {
-         dispatch({type:"loginSuccess", accesstoken: params.accesstoken, loginname: result.data.loginname, avatar_url: result.data.avatar_url})
-         return result.data;
-     } else {
-        dispatch({type: "loginFail", accesstoken: null, loginname: null})
-     }
-     return false;
+    let result = await postJSON(api.checkUserToken, params);
+    if (result && result.data && result.data.success) {
+      dispatch({
+        type: 'loginSuccess',
+        accessUserToken: params.accesstoken,
+        loginname: result.data.loginname,
+        avatar_url: result.data.avatar_url
+      });
+      return result.data;
+    } else {
+      dispatch({ type: 'loginFail', accesstoken: null, loginname: null });
+    }
+    return false;
+  };
+}
+
+// 获取用户信息
+export async function getUserInfo(params) {
+  let result = await getJSON(api.getUserInfo + params.loginname);
+  if (result && result.data && result.data.success) {
+    return result.data;
+  } else {
+    Taro.showToast({ title: '拉取用户信息失败' });
   }
 }
-//获取用户信息
-export async function getUserInfo(params){
-    let result = await getJSON(api.getUserInfo + params.loginname);
-    if(result && result.data && result.data.success) {
-        return result.data
-    } else {
-       Taro.showToast({title: '拉取用户信息失败'})
-    }
-}
-//验证用户信息
+// 验证用户信息
 export async function validateUser(params) {
-     if(params && params.accesstoken){
-         return true;
-     }
-     Taro.navigateTo({url:'/pages/login/login'})
-     return false;
+  if (params && params.accessUserToken) {
+    return true;
+  }
+  Taro.navigateTo({ url: '/pages/login/login' });
+  return false;
 }
